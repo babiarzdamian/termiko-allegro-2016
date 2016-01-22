@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900,300&subset=latin,latin-ext);
+
 /* Browser Resets */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -10,8 +12,6 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900,300&subset=latin,latin-ext);
-
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -21,7 +21,9 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
-
+ul, li, ul li, ol, ol li {
+	padding: 0;
+}
 * {
 	-webkit-box-sizing: border-box;;
 	-moz-box-sizing: border-box;
@@ -30,35 +32,31 @@ time, mark, audio, video {
 
 body {
 	/*sizing for allegro*/
-	width: 1200px;
+	max-width: 1200px;
 	background: #f0f0f0;
 	margin: 0 auto;
 	/*font styles*/
-	font: 400 14px/18px "Open-Sans", Helvetica, Arial, sans-serif;
+	font: 400 14px/18px "Lato", Helvetica, Arial, sans-serif;
 	color: 999;
-	text-align: center;
+	text-align: left;
 }
+h1 {
 
+}
+h2 {
+	font: 700 21px/21px "lato", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+}
 .wrapper {
 	background: #fff;
-	height: 1200px;
-
-	padding: 0 15px;
-
-	-webkit-box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.4);
-	-moz-box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.4);
-	box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.4);
-
-	/*Do usunięcia przed wrzuceniem na allegro !!! */
+	/*Do usunięcia przed publikacją na allegro !!! */
 	border-left: solid 1px #ccc;
 	border-right: solid 1px #ccc;
 	border-bottom: solid 1px #ccc;
-
-
 }
 .navigation {
 	list-style-type: none;
-
+	text-align: center;
 }
 .navigation ul {
 	padding: 0;
@@ -73,9 +71,11 @@ body {
 	display: block;
 }
 .band {
-	padding: 32px 0;
+	padding: 32px 25px;
 }
 .band.header {
+	padding-left: 0;
+	padding-right: 0;
 	background: #fff;
 
 	margin-left: auto;
@@ -98,17 +98,22 @@ body {
 
 	height: 2px;
 	width: 100%;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cccccc+0,cccccc+52,cccccc+100&1+0,0+53,1+100 */
+	background: rgba(204,204,204,1); /*Old browsers*/
 	background: -moz-linear-gradient(left,  rgba(204,204,204,1) 0%, rgba(204,204,204,0.2) 50%, rgba(204,204,204,1) 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(left,  rgba(204,204,204,1) 0%, rgba(204,204,204,0.2) 50%,rgba(204,204,204,1) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to right,  rgba(204,204,204,1) 0%, rgba(204,204,204,0.1) 50%,rgba(204,204,204,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#cccccc',GradientType=1 ); /* IE6-9 */
-	background-color: #fff;
+	
 }
 .band.cover {
 	background: url(http://vps-1163492-9205.cp.homecloud.pl/termiko/images/bg.gif)
 				#fff;
+	text-align: center;
+	color: rgba(0,0,0,0.1);
+	font: 900 51px/21px "Lato", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
 }
+
 .band.navigation.primary {
 	/*override defeault band padding*/
 	padding: 0;
@@ -124,13 +129,11 @@ body {
 .band.subject {
 	color: white;
 
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cc0000+0,d10407+37,900000+99 */
 	background: rgb(204,0,0); /* Old browsers */
 	background: -moz-linear-gradient(left,  rgba(204,0,0,1) 0%, rgba(209,4,7,1) 37%, rgba(144,0,0,1) 99%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(left,  rgba(204,0,0,1) 0%,rgba(209,4,7,1) 37%,rgba(144,0,0,1) 99%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to right,  rgba(204,0,0,1) 0%,rgba(209,4,7,1) 37%,rgba(144,0,0,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', endColorstr='#900000',GradientType=1 ); /* IE6-9 */
-	background-color: rgb(204,0,0);
 }
 
 .band.navigation.secondary {
@@ -140,14 +143,29 @@ body {
 .band.navigation.secondary ul li a{
 	padding: 16px 12px;
 	font-size: 12px;
-
+	border-left: solid 1px transparent;
+	border-right: solid 1px transparent;
 	color: #aaa;
 }
 .band.navigation.secondary ul li a:hover{
 	background: #efefef;
 	text-decoration: underline;
+	border-left: solid 1px #ccc;
+	border-right: solid 1px #ccc;
 }
 .band.description {
 	background: url(http://vps-1163492-9205.cp.homecloud.pl/termiko/images/bg.gif)
 				#fff;
+}
+
+/* ... */
+
+.band.footer {
+	background: rgb(51,51,51); /* Old browsers */
+	background: -moz-linear-gradient(left,  rgba(51,51,51,1) 0%, rgba(63,63,63,1) 37%, rgba(34,34,34,1) 99%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  rgba(51,51,51,1) 0%,rgba(63,63,63,1) 37%,rgba(34,34,34,1) 99%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,  rgba(51,51,51,1) 0%,rgba(63,63,63,1) 37%,rgba(34,34,34,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#222222',GradientType=1 ); /* IE6-9 */
+
+	color: #fff;
 }
